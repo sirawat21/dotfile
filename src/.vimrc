@@ -8,9 +8,11 @@ Plug 'tomasr/molokai'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
+Plug 'posva/vim-vue'
 call plug#end()
 
 " --- [ VIM PRIMAL CONFIG] ---
+set hidden
 set nobackup
 set nowritebackup
 set noswapfile
@@ -22,13 +24,21 @@ set backspace=indent,eol,start
 set shell=/bin/zsh
 set splitbelow
 syntax enable
+" SILENT KEYS
+set visualbell
+set noerrorbells
 " FILE ENCODE
 set encoding=utf-8
 set fileencoding=utf-8
 " REMOVE SREACH HIGHLIGHT
 noremap <SPACE> :nohlsearch<CR>
+" CLEAR ALL BUFFER
+command BuffClear silent! execute '%bd|e#|bd#'
+command BC silent! execute '%bd|e#|bd#'
 " TAB BAR COLOR
 :hi TabLineSel ctermfg=White
+" TAB CLOSE
+cmap tcs tabclose
 " TAB SWITCH
 map <C-h> :tabp<CR>
 map <C-l> :tabn<CR>
