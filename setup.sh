@@ -1,13 +1,23 @@
 #!/bin/sh
 
-# BANNER
-source ./src/banner
-
-# BREW
-echo "🚛 Installing homw brew"
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew cask
-brew install $(cat ./src/brewfile | tr '\n' ' ')
+# CHOOSE PLATFORM
+selectPlatform() {
+    read -p "Select number to choose OS [ (1) OSX | (2) Ubuntu ] : " CHOICE_SELETE_PLATFORM
+    if [ "$CHOICE_SELETE_PLATFORM" -eq "1" ]; then
+        # MAC
+        echo "🚛 Installing homw brew"
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        brew cask
+        brew install $(cat ./src/brewfile | tr '\n' ' ')
+    elif [ "$CHOICE_SELETE_PLATFORM" -eq "2" ]; then
+        # Ubuntu
+        sudo apt-get update -y
+        sudo apt-get install -yf $(cat ./src/aptlists | tr '\n' ' ')
+    else 
+        echo "Fail to process script had stop"
+    fi
+}
+selectPlatform
 
 # SHELL
 echo "✏️  Create zsh profile"
@@ -28,7 +38,7 @@ echo "✏️  Create gitconfig file"
 cp ./src/.gitconfig $HOME
 
 # TMUX
-echo "  Create tmux config file"
+echo " Create tmux config file"
 cp ./src/.tmux.conf $HOME
 
 # VIM
