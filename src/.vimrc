@@ -24,6 +24,12 @@ set backspace=indent,eol,start
 set shell=/bin/zsh
 set splitbelow
 syntax enable
+" CREATE SESSION STATE
+command SessionSaveState silent! execute 'mksession! session.vim'
+command SSS silent! execute 'mksession! session.vim'
+" WINDOW SPILT SIZE
+map <C-w>= :vertical res +50<CR>
+map <C-w>- :vertical res -50<CR>
 " SILENT KEYS
 set visualbell
 set noerrorbells
@@ -84,7 +90,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " close vim if the only window left open is a NERDTree
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " nerdtree file highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
         exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg

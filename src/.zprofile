@@ -27,6 +27,7 @@ alias php='/usr/local/bin/php'
 #SET VIM
 alias vim='/usr/local/bin/vim'
 alias vi='/usr/local/bin/vim'
+alias vims='vim -S session.vim'
 
 #SET CAT HIGH LIGHT
 alias cat='ccat'
