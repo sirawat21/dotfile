@@ -5,8 +5,11 @@ selectPlatform() {
     read -p "Select number to choose OS [ (1) OSX | (2) Ubuntu ] : " CHOICE_SELETE_PLATFORM
     if [ "$CHOICE_SELETE_PLATFORM" -eq "1" ]; then
         # MAC
-        echo "🚛 Installing homw brew"
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        read -p "Install Brew [y/n] : " BREW_INSTALL
+        if [ "$BREW_INSTALL" == "Y" ] || [ "$BREW_INSTALL" == "y" ]; then
+            echo "🚛 Installing homw brew"
+            /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        fi
         brew cask
         brew install $(cat ./src/brewfile | tr '\n' ' ')
     elif [ "$CHOICE_SELETE_PLATFORM" -eq "2" ]; then
