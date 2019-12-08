@@ -8,7 +8,10 @@ Plug 'tomasr/molokai'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
-Plug 'posva/vim-vue'
+Plug 'mxw/vim-jsx'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 " --- [ VIM PRIMAL CONFIG] ---
@@ -133,3 +136,10 @@ let g:NERDSpaceDelims = 1
 "<leader>cn |NERDComNestedComment|
 " Comments out the selected lines
 "<leader>cs |NERDComSexyComment|
+" vim-jsx
+let g:jsx_ext_required = 1
+let g:jsx_pragma_required = 1
+" javescript libraries syntax
+let g:used_javascript_libs = 'react,jquery,underscore'
+" mattn/emmet-vim
+
