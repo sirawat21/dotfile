@@ -30,8 +30,8 @@ echo "✏️  Change shell to zsh"
 chsh -s /bin/zsh $USER
 source $HOME/.zprofile
 
-# HASH LOGIN
-touch $HOME/.hashlogin
+# HUSH LOGIN
+touch $HOME/.hushlogin
 
 # HOST NAME
 sudo scutil --set HostName BMP
