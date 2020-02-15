@@ -10,6 +10,12 @@ alias lal='ls -laG'
 export CLICOLOR=1
 export LSCOLORS=ExGxxxxxcxbxxxxxxxExEc
 
+#RM
+export rmm() { rm -rf $1 }
+
+#CHANGE & CREATE DIRECTORY
+export mkcd() {mkdir $1 && cd -P $1}
+
 #SET GREP
 alias grep='grep'
 export GREP_OPTIONS='--color=always' export GREP_COLOR='1;31;1'
@@ -34,7 +40,9 @@ alias cat='ccat'
 #QUICK CAST
 alias inet='ifconfig | grep "inet\|ether"'
 export psshow() { launchctl list | grep $1 }
-
+# TMUX
+alias tx='tmux'
+export txs() { tmux new -s $1}
 
 #GATEKEEPER disable/enable
 # sudo spctl --master-disable
