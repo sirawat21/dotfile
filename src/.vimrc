@@ -12,6 +12,9 @@ Plug 'mxw/vim-jsx'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/emmet-vim'
+Plug 'omnisharp/omnisharp-roslyn'
+Plug 'valloric/youcompleteme'
+Plug 'scrooloose/syntastic'
 call plug#end()
 
 " --- [ VIM PRIMAL CONFIG] ---
@@ -142,4 +145,11 @@ let g:jsx_pragma_required = 1
 " javescript libraries syntax
 let g:used_javascript_libs = 'react,jquery,underscore'
 " mattn/emmet-vim
-
+" [8] Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
