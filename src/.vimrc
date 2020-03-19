@@ -15,6 +15,7 @@ Plug 'mattn/emmet-vim'
 Plug 'omnisharp/omnisharp-roslyn'
 Plug 'valloric/youcompleteme'
 Plug 'scrooloose/syntastic'
+Plug 'chriskempson/base16-vim'
 call plug#end()
 
 " --- [ VIM PRIMAL CONFIG] ---
@@ -30,6 +31,18 @@ set backspace=indent,eol,start
 set shell=/bin/zsh
 set splitbelow
 syntax enable
+
+" ONMI AUTOCOMPLETE
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+" Start autocompletion after 4 chars
+let g:ycm_min_num_of_chars_for_completion = 4
+let g:ycm_min_num_identifier_candidate_chars = 4
+let g:ycm_enable_diagnostic_highlighting = 0
+" Don't show YCM's preview window
+set completeopt-=preview
+let g:ycm_add_preview_to_completeopt = 0
+
 " CREATE SESSION STATE
 command SessionSaveState silent! execute 'mksession! session.vim'
 command SSS silent! execute 'mksession! session.vim'
@@ -129,6 +142,7 @@ let g:NERDTreeShowIgnoredStatus = 1
 "colorscheme molokai
 " [6] ONEDARK
 colorscheme onedark
+
 " [7] NERD COMMENTER
 let g:NERDSpaceDelims = 1
 " Uncomments the selected line
