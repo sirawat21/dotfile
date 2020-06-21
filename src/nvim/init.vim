@@ -6,17 +6,19 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'joshdick/onedark.vim'
+Plug 'rakr/vim-one'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
 Plug 'mattn/emmet-vim'
-Plug 'joshdick/onedark.vim'
 Plug 'neomake/neomake'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'othree/yajs.vim'
 Plug 'mattn/emmet-vim'
+Plug 'nanotech/jellybeans.vim'
+Plug 'yggdroot/indentline'
 "-------------------- [AUTO COMPLETE PACKAGES] ---------------------------"
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' } "Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'Shougo/deoplete.nvim'
 Plug 'carlitux/deoplete-ternjs'
 "---------------------------- [ JSX ] ------------------------------------"
 Plug 'pangloss/vim-javascript'
@@ -24,7 +26,6 @@ Plug 'mxw/vim-jsx'
 "-------------------------------------------------------------------------"
 call plug#end()
 "========================================================================="
-
 
 
 "=========================== [ AUTO COMPLETE ] ==========================="
@@ -46,6 +47,15 @@ command ACD silent! execute 'call deoplete#disable()'
 
 
 
+"============================ [ CODE SNIPPET ] ==========================="
+"Javascript
+map <C-f>fn ifunction(){}<ESC> F)
+map <C-f>ff i() => {}<ESC> F)
+map <C-f>cc iconsole.log(``)<ESC> F`
+"========================================================================="
+
+
+
 " ======================= [ VIM CONFIGURATION ] =========================="
 " PRIMAL
 set hidden
@@ -59,7 +69,11 @@ set cursorline
 set backspace=indent,eol,start
 set shell=/bin/zsh
 set splitbelow
-
+set ttimeout        " time out for key codes
+set ttimeoutlen=100 " wait up to 100ms after Esc for special key
+"========================================================================="
+" TERMINAL NEW MAP FOR NEOVIM
+tnoremap <Esc> <C-\><C-n>:q!<CR>
 "========================================================================="
 " CREATE SESSION STATE
 command SessionSaveState silent! execute 'mksession! session.vim'
@@ -92,25 +106,35 @@ cmap tcs tabclose
 " TAB SWITCH
 map <C-h> :tabp<CR>
 map <C-l> :tabn<CR>
-" TAB SPACE SIZE
-"set autoindent
-set shiftwidth=4
-set textwidth=120
-set expandtab
-set tabstop=4
-set softtabstop=4
-" TAB MARKING
-" display indentation guides
-set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
-" convert spaces to tabs when reading file
-autocmd! bufreadpost * set noexpandtab | retab! 4
-" convert tabs to spaces before writing file
-autocmd! bufwritepre * set expandtab | retab! 4
-" convert spaces to tabs after writing file (to show guides again)
-autocmd! bufwritepost * set noexpandtab | retab! 4
+"========================================================================="
+" TAB SPACE
+" SPACE SIZE
+set tabstop=4       " The width of a TAB is set to 4.
+                    " Still it is a \t. It is just that
+                    " Vim will interpret it to be having
+                    " a width of 4.
+set shiftwidth=4    " Indents will have a width of 4
+
+set softtabstop=4   " Sets the number of columns for a TAB
+
+set expandtab       " Expand TABs to spaces
+
+" MARKING TAB SPACE
+" [1] Manual Marking
+"" display indentation guides
+"set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
+"" convert spaces to tabs when reading file
+"autocmd! bufreadpost * set noexpandtab | retab! 4
+"" convert tabs to spaces before writing file
+"autocmd! bufwritepre * set expandtab | retab! 4
+"" convert spaces to tabs after writing file (to show guides again)
+"autocmd! bufwritepost * set noexpandtab | retab! 4
+" [2] Indent Line
+let g:indentLine_setColors = 0
+let g:indentLine_char = '┆'
 "========================================================================="
 " OPEN TERMINAL
-map <C-j> :term<CR>
+" map <C-j> :term<CR>
 "========================================================================="
 " MAP LEADER KEY
 let mapleader='\'
@@ -126,8 +150,6 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 "========================================================================="
-
-
 
 " ===================== [ PLUGIN CONFIGURATION ] ========================="
 " [1] NERD TREE
@@ -172,8 +194,14 @@ let g:airline#extensions#tabline#enabled = 1
 " [4] NERD TREE GIT
 let g:NERDTreeShowIgnoredStatus = 1
 "========================================================================="
-" [6] ONEDARK
-colorscheme onedark
+" [6] COLOR SCHEME
+" [6.1] One Dark
+" colorscheme onedark
+" [6.2] Jelly Beans
+" colorscheme jellybeans
+" [6.3] Vim One
+colorscheme one
+set background=dark
 "========================================================================="
 " [7] NERD COMMENTER
 let g:NERDSpaceDelims = 1
@@ -184,3 +212,4 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 " [9]
 let g:jsx_ext_required = 1
 "========================================================================="
+
