@@ -15,7 +15,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'othree/yajs.vim'
 Plug 'mattn/emmet-vim'
 Plug 'nanotech/jellybeans.vim'
-Plug 'yggdroot/indentline'
+Plug 'nathanaelkane/vim-indent-guides'
 "-------------------- [AUTO COMPLETE PACKAGES] ---------------------------"
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' } "Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'Shougo/deoplete.nvim'
@@ -121,17 +121,16 @@ set expandtab       " Expand TABs to spaces
 
 " MARKING TAB SPACE
 " [1] Manual Marking
-"" display indentation guides
-"set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
-"" convert spaces to tabs when reading file
-"autocmd! bufreadpost * set noexpandtab | retab! 4
-"" convert tabs to spaces before writing file
-"autocmd! bufwritepre * set expandtab | retab! 4
-"" convert spaces to tabs after writing file (to show guides again)
-"autocmd! bufwritepost * set noexpandtab | retab! 4
-" [2] Indent Line
-let g:indentLine_setColors = 0
-let g:indentLine_char = '┆'
+" display indentation guides
+set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
+" convert spaces to tabs when reading file
+autocmd! bufreadpost * set noexpandtab | retab! 4
+" convert tabs to spaces before writing file
+autocmd! bufwritepre * set expandtab | retab! 4
+" convert spaces to tabs after writing file (to show guides again)
+autocmd! bufwritepost * set noexpandtab | retab! 4
+" [2] Indent Guides
+let g:indent_guides_enable_on_vim_startup = 1
 "========================================================================="
 " OPEN TERMINAL
 " map <C-j> :term<CR>
@@ -187,9 +186,12 @@ let g:multi_cursor_next_key='<C-m>'
 let g:multi_cursor_quit_key='<Esc>'
 "========================================================================="
 " [3] AIRLINE
+" [3.1] Bubbble Gum
 "let g:airline_theme='simple'
-let g:airline_theme='bubblegum'
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline_theme='bubblegum'
+"let g:airline#extensions#tabline#enabled = 1
+" [3.2] One
+let g:airline_theme='one'
 "========================================================================="
 " [4] NERD TREE GIT
 let g:NERDTreeShowIgnoredStatus = 1
