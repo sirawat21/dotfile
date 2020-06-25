@@ -109,28 +109,33 @@ map <C-l> :tabn<CR>
 "========================================================================="
 " TAB SPACE
 " SPACE SIZE
-set tabstop=4       " The width of a TAB is set to 4.
+set tabstop=2       " The width of a TAB is set to 4.
                     " Still it is a \t. It is just that
                     " Vim will interpret it to be having
                     " a width of 4.
-set shiftwidth=4    " Indents will have a width of 4
+set shiftwidth=2    " Indents will have a width of 4
 
-set softtabstop=4   " Sets the number of columns for a TAB
+set softtabstop=2   " Sets the number of columns for a TAB
 
 set expandtab       " Expand TABs to spaces
 
 " MARKING TAB SPACE
-" [1] Manual Marking
-" display indentation guides
-set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
-" convert spaces to tabs when reading file
-autocmd! bufreadpost * set noexpandtab | retab! 4
-" convert tabs to spaces before writing file
-autocmd! bufwritepre * set expandtab | retab! 4
-" convert spaces to tabs after writing file (to show guides again)
-autocmd! bufwritepost * set noexpandtab | retab! 4
+"" [1] Manual Marking
+"" display indentation guides
+"set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
+"" convert spaces to tabs when reading file
+"autocmd! bufreadpost * set noexpandtab | retab! 4
+"" convert tabs to spaces before writing file
+"autocmd! bufwritepre * set expandtab | retab! 4
+"" convert spaces to tabs after writing file (to show guides again)
+"autocmd! bufwritepost * set noexpandtab | retab! 4
 " [2] Indent Guides
 let g:indent_guides_enable_on_vim_startup = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=233
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=232
+"========================================================================="
+" SET TAB SPACE FOR SPECIFIC FILE
+
 "========================================================================="
 " OPEN TERMINAL
 " map <C-j> :term<CR>
@@ -202,6 +207,10 @@ let g:NERDTreeShowIgnoredStatus = 1
 " [6.2] Jelly Beans
 " colorscheme jellybeans
 " [6.3] Vim One
+let g:onedark_color_overrides = {
+\ "black": {"gui": "#2F343F", "cterm": "235", "cterm16": "0" },
+\ "purple": { "gui": "#C678DF", "cterm": "170", "cterm16": "5" }
+\}
 colorscheme one
 set background=dark
 "========================================================================="
