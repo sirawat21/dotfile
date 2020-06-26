@@ -5,17 +5,19 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'joshdick/onedark.vim'
-Plug 'rakr/vim-one'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-airline/vim-airline'
 Plug 'mattn/emmet-vim'
 Plug 'neomake/neomake'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'othree/yajs.vim'
 Plug 'mattn/emmet-vim'
-Plug 'nanotech/jellybeans.vim'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'sheerun/vim-polyglot'
+Plug 'kien/ctrlp.vim'
+"-------------------------------- [ TAB STATUS ] -------------------------"
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+"----------------------------- [ SCHEME ] --------------------------------"
+Plug 'joshdick/onedark.vim'
 "-------------------- [AUTO COMPLETE PACKAGES] ---------------------------"
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' } "Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'Shougo/deoplete.nvim'
@@ -69,7 +71,7 @@ set cursorline
 set backspace=indent,eol,start
 set shell=/bin/zsh
 set splitbelow
-set ttimeout        " time out for key codes
+set ttimeout    " time out for key codes
 set ttimeoutlen=100 " wait up to 100ms after Esc for special key
 "========================================================================="
 " TERMINAL NEW MAP FOR NEOVIM
@@ -109,30 +111,30 @@ map <C-l> :tabn<CR>
 "========================================================================="
 " TAB SPACE
 " SPACE SIZE
-set tabstop=2       " The width of a TAB is set to 4.
-                    " Still it is a \t. It is just that
-                    " Vim will interpret it to be having
-                    " a width of 4.
-set shiftwidth=2    " Indents will have a width of 4
+set tabstop=4 " The width of a TAB is set to 4.
+    " Still it is a \t. It is just that
+    " Vim will interpret it to be having
+    " a width of 4.
+set shiftwidth=4 " Indents will have a width of 4
 
-set softtabstop=2   " Sets the number of columns for a TAB
+set softtabstop=4 " Sets the number of columns for a TAB
 
-set expandtab       " Expand TABs to spaces
+set expandtab " Expand TABs to spaces
 
 " MARKING TAB SPACE
 "" [1] Manual Marking
-"" display indentation guides
-"set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
-"" convert spaces to tabs when reading file
-"autocmd! bufreadpost * set noexpandtab | retab! 4
-"" convert tabs to spaces before writing file
-"autocmd! bufwritepre * set expandtab | retab! 4
-"" convert spaces to tabs after writing file (to show guides again)
-"autocmd! bufwritepost * set noexpandtab | retab! 4
+" display indentation guides
+set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
+" convert spaces to tabs when reading file
+autocmd! bufreadpost * set noexpandtab | retab! 4
+" convert tabs to spaces before writing file
+autocmd! bufwritepre * set expandtab | retab! 4
+" convert spaces to tabs after writing file (to show guides again)
+autocmd! bufwritepost * set noexpandtab | retab! 4
 " [2] Indent Guides
-let g:indent_guides_enable_on_vim_startup = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=233
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=232
+"let g:indent_guides_enable_on_vim_startup = 1
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=233
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=232
 "========================================================================="
 " SET TAB SPACE FOR SPECIFIC FILE
 
@@ -145,14 +147,14 @@ let mapleader='\'
 set timeout timeoutlen=1500
 "========================================================================="
 " DISABLE ARROW CURSOR
-inoremap  <Up> <NOP>
-inoremap  <Down>   <NOP>
-inoremap  <Left>   <NOP>
-inoremap  <Right>  <NOP>
-noremap   <Up> <NOP>
-noremap   <Down>   <NOP>
-noremap   <Left>   <NOP>
-noremap   <Right>  <NOP>
+inoremap    <Up> <NOP>
+inoremap    <Down>   <NOP>
+inoremap    <Left>   <NOP>
+inoremap    <Right>  <NOP>
+noremap     <Up> <NOP>
+noremap     <Down>   <NOP>
+noremap     <Left>   <NOP>
+noremap     <Right>  <NOP>
 "========================================================================="
 
 " ===================== [ PLUGIN CONFIGURATION ] ========================="
@@ -168,8 +170,8 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " nerdtree file highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-        exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-        exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+    exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+    exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
 call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
 call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
@@ -190,29 +192,19 @@ let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-m>'
 let g:multi_cursor_quit_key='<Esc>'
 "========================================================================="
-" [3] AIRLINE
-" [3.1] Bubbble Gum
-"let g:airline_theme='simple'
-"let g:airline_theme='bubblegum'
-"let g:airline#extensions#tabline#enabled = 1
-" [3.2] One
-let g:airline_theme='one'
+" [3] AIRLINE STATUS TAB
+" [3.1] AIRLINE
+let g:airline#extensions#tabline#enabled = 1
 "========================================================================="
 " [4] NERD TREE GIT
 let g:NERDTreeShowIgnoredStatus = 1
 "========================================================================="
 " [6] COLOR SCHEME
 " [6.1] One Dark
-" colorscheme onedark
-" [6.2] Jelly Beans
-" colorscheme jellybeans
-" [6.3] Vim One
 let g:onedark_color_overrides = {
-\ "black": {"gui": "#2F343F", "cterm": "235", "cterm16": "0" },
-\ "purple": { "gui": "#C678DF", "cterm": "170", "cterm16": "5" }
+\ "black": {"gui": "#000000", "cterm": "0", "cterm16": "0" }
 \}
-colorscheme one
-set background=dark
+colorscheme onedark
 "========================================================================="
 " [7] NERD COMMENTER
 let g:NERDSpaceDelims = 1
