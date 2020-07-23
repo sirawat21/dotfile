@@ -19,9 +19,7 @@ Plug 'vim-airline/vim-airline-themes'
 "----------------------------- [ SCHEME ] --------------------------------"
 Plug 'joshdick/onedark.vim'
 "-------------------- [AUTO COMPLETE PACKAGES] ---------------------------"
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' } "Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-Plug 'Shougo/deoplete.nvim'
-Plug 'carlitux/deoplete-ternjs'
+
 "---------------------------- [ JSX ] ------------------------------------"
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -31,20 +29,6 @@ call plug#end()
 
 
 "=========================== [ AUTO COMPLETE ] ==========================="
-let g:deoplete#enable_at_startup = 0
-let g:deoplete#enable_ignore_case = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#enable_camel_case = 1
-let g:deoplete#enable_refresh_always = 1
-let g:deoplete#max_abbr_width = 0
-let g:deoplete#max_menu_width = 0
-let g:deoplete#omni#input_patterns = get(g:,'deoplete#omni#input_patterns',{})
-let g:tern_request_timeout = 1
-let g:tern_request_timeout = 6000
-let g:tern#command = ["tern"]
-let g:tern#arguments = [" - persistent"]
-command ACE silent! execute 'call deoplete#enable()'
-command ACD silent! execute 'call deoplete#disable()'
 "========================================================================="
 
 
@@ -82,8 +66,8 @@ set ttimeoutlen=100 " wait up to 100ms after Esc for special key
 tnoremap <Esc> <C-\><C-n>:q!<CR>
 "========================================================================="
 " CREATE SESSION STATE
-command SessionSaveState silent! execute 'mksession! session.vim'
-command SSS silent! execute 'mksession! session.vim'
+command SessionSaveState silent execute 'mksession! session.vim'
+command SSS silent execute 'mksession! session.vim'
 "========================================================================="
 " WINDOW SPILT SIZE
 map <C-w>= :vertical res +50<CR>
