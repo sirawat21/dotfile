@@ -20,6 +20,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'joshdick/onedark.vim'
 "-------------------- [AUTO COMPLETE PACKAGES] ---------------------------"
 
+
+
 "---------------------------- [ JSX ] ------------------------------------"
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -128,7 +130,7 @@ autocmd! bufwritepost * set noexpandtab | retab! 4
 
 "========================================================================="
 " OPEN TERMINAL
-" map <C-j> :term<CR>
+"map <C-j> :term<CR>
 "========================================================================="
 " MAP LEADER KEY
 let mapleader='\'
