@@ -20,8 +20,22 @@ export mkcd() {mkdir $1 && cd -P $1}
 alias grep='grep'
 export GREP_OPTIONS='--color=always' export GREP_COLOR='1;31;1'
 
+# ENABLE CMD SUBSTITUTION
+setopt prompt_subst
+
+#SET GIT BRANCH
+gitBranchWatch() {
+    BRANCH=$(git branch 2> /dev/null |  sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')
+    if [ "$BRANCH" = "" ]; then
+        echo "$ "
+    else
+        echo "%F{red}$BRANCH%f $ "
+    fi
+}
+
 #SET TERM STYLE
-PROMPT='%F{green}%n%f@%F{green}%m%f:%F{yellow}%1d%f$ '
+#PROMPT='%F{green}%n%f@%F{green}%m%f:%F{yellow}%1d%f$ '
+PROMPT='%F{green}%n%f@%F{green}%m%f:%F{yellow}%1d%f$(gitBranchWatch)'
 
 #SET PYTHON
 alias python='python2'
@@ -31,7 +45,7 @@ alias pip2='pip'
 alias php='/usr/local/bin/php'
 
 #SET VIM
-alias vim='/usr/local/bin/vim'
+alias vim='/usr/local/bin/nvim'
 alias vi='/usr/local/bin/vim'
 alias vims='vim -S session.vim'
 
