@@ -11,6 +11,7 @@ nmap
 python
 python2
 vim
+neovim
 node
 nano
 php
