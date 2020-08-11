@@ -7,7 +7,7 @@ selectPlatform() {
         # MAC
         read -p "Install Brew [y/n] : " BREW_INSTALL
         if [ "$BREW_INSTALL" == "Y" ] || [ "$BREW_INSTALL" == "y" ]; then
-            echo "🚛 Installing home brew"
+            echo "🚛 Installing Homebrew"
             /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
         fi
         brew cask
