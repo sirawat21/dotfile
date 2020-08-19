@@ -1,4 +1,4 @@
-# Development environment setup
+# Development Environment Auto-setup
 ---
 ## Dependency programs
 - [Homebrew] (https://docs.brew.sh/Installation)
