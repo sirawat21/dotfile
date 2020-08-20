@@ -8,7 +8,9 @@ tmux
 tree
 nmap
 python
+python2
 vim
+neovim
 nodejs
 nano
 php
