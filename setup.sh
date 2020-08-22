@@ -2,7 +2,7 @@
 
 # CHOOSE PLATFORM
 selectPlatform() {
-    read -p "Select number to choose OS [ (1) OSX | (2) Ubuntu ] : " CHOICE_SELETE_PLATFORM
+    read -p "Select operating system [ (1) OSX | (2) Ubuntu ] : " CHOICE_SELETE_PLATFORM
     if [ "$CHOICE_SELETE_PLATFORM" -eq "1" ]; then
         # MAC
         read -p "Install Homwbrew [y/n] : " BREW_INSTALL
