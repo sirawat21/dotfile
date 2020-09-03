@@ -5,7 +5,7 @@ selectPlatform() {
     read -p "Select operating system [ (1) OSX | (2) Ubuntu ] : " CHOICE_SELETE_PLATFORM
     if [ "$CHOICE_SELETE_PLATFORM" -eq "1" ]; then
         # MAC
-        read -p "Install Homwbrew [y/n] : " BREW_INSTALL
+        read -p "Install Homwbrew [Y/N] : " BREW_INSTALL
         if [ "$BREW_INSTALL" == "Y" ] || [ "$BREW_INSTALL" == "y" ]; then
             echo "🚛 Installing Homebrew"
             /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
