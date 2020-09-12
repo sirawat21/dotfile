@@ -1,6 +1,6 @@
 # Development Environment Auto-setup
 ---
-## Dependency programs
+## Dependency lists
 - [Homebrew] (https://docs.brew.sh/Installation)
 - [Tmux] (https://github.com/tmux/tmux)
 - [Vim] (https://www.vim.org/download.php)
