@@ -14,7 +14,7 @@ selectPlatform() {
         brew install $(cat ./src/brewfile | tr '\n' ' ')
     elif [ "$CHOICE_SELETE_PLATFORM" -eq "2" ]; then
         # Ubuntu
-        echo "🚛 Upgrade APT & update dependencies"
+        echo "🚛 Upgrade APT & Update Dependencies"
         sudo apt-get update -y
         sudo apt-get install -yf $(cat ./src/aptlists | tr '\n' ' ')
     else 
