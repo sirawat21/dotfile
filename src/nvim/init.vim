@@ -7,12 +7,10 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'mattn/emmet-vim'
 Plug 'neomake/neomake'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'othree/yajs.vim'
-Plug 'mattn/emmet-vim'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'sheerun/vim-polyglot'
-Plug 'kien/ctrlp.vim'
+"Plug 'ludovicchabant/vim-gutentags'
+"Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'sheerun/vim-polyglot'
+"Plug 'kien/ctrlp.vim'
 "-------------------------------- [ TAB STATUS ] -------------------------"
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -23,8 +21,8 @@ Plug 'joshdick/onedark.vim'
 
 
 "---------------------------- [ JSX ] ------------------------------------"
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+"Plug 'pangloss/vim-javascript'
+"Plug 'mxw/vim-jsx'
 "-------------------------------------------------------------------------"
 call plug#end()
 "========================================================================="
@@ -41,9 +39,8 @@ call plug#end()
 
 "============================ [ CODE SNIPPET ] ==========================="
 "Javascript
-map <C-f>fn ifunction(){}<ESC> F)
-map <C-f>ff i() => {}<ESC> F)
-map <C-f>cc iconsole.log(``)<ESC> F`
+autocmd BufRead,BufNewfile *.js source ~/.config/nvim/js.vim
+
 "========================================================================="
 
 
@@ -70,6 +67,10 @@ tnoremap <Esc> <C-\><C-n>:q!<CR>
 " CREATE SESSION STATE
 command SessionSaveState silent execute 'mksession! session.vim'
 command SSS silent execute 'mksession! session.vim'
+"========================================================================="
+" MOUSE CONTROL
+command MME silent execute 'set mouse=a'
+command MMD silent execute 'set mouse='
 "========================================================================="
 " WINDOW SPILT SIZE
 map <C-w>= :vertical res +50<CR>
@@ -187,7 +188,8 @@ let g:multi_cursor_quit_key='<Esc>'
 let g:airline#extensions#tabline#enabled = 1
 "========================================================================="
 " [4] NERD TREE GIT
-let g:NERDTreeShowIgnoredStatus = 1
+" let g:NERDTreeShowIgnoredStatus = 1
+let g:NERDTreeGitStatusShowIgnore = 1
 "========================================================================="
 " [6] COLOR SCHEME
 " [6.1] One Dark
@@ -205,4 +207,3 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 " [9]
 let g:jsx_ext_required = 1
 "========================================================================="
-

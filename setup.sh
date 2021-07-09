@@ -48,7 +48,6 @@ cp ./src/.tmux.conf $HOME
 # VIM
 echo "✏️  Create vimrc file"
 cp ./src/.vimrc $HOME
-
 # VIM PLUG
 echo "🚛 Install Vim plug"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
