@@ -51,6 +51,10 @@ cp ./src/.vimrc $HOME
 # VIM PLUG
 echo "🚛 Install Vim plug"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# INSTALL NVIM
+echo "🚛 Install NeoVim"
+brew install neovim
+brew link neovim
 # NEOVIM PLUG
 echo "🚚 Install Neo Vim plug"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
