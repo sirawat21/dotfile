@@ -33,6 +33,11 @@ gitBranchWatch() {
     fi
 }
 
+#NODEMON MORNITORING
+watch() {
+    nodemon --exec $1 $2
+}
+
 #SET TERM STYLE
 #PROMPT='%F{green}%n%f@%F{green}%m%f:%F{yellow}%1d%f$ '
 PROMPT='%F{green}%n%f@%F{green}%m%f:%F{yellow}%1d%f$(gitBranchWatch)'
