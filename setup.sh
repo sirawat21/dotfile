@@ -4,8 +4,8 @@
 # echo "🚛 Installing Homebrew"
 # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 echo "🚛 Homebrew Packages"
-brew install $(cat ./src/brewfile | tr '\n' ' ')
-
+BREW_PACKAGES=$(cat ./src/brewfile | tr '\n' ' ')
+brew install $BREW_PACKAGES
 # SHELL
 echo "✏️  Create zsh profile"
 cp ./src/.zprofile $HOME
@@ -31,6 +31,7 @@ cp ./src/.tmux.conf $HOME
 # VIM
 echo "✏️  Create vimrc file"
 cp ./src/.vimrc $HOME
+
 # VIM PLUG
 echo "🚛 Install Vim plug"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
