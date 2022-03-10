@@ -7,8 +7,15 @@ alias la='ls -aG'
 alias ll='ls -lG'
 alias lla='ls -laG'
 alias lal='ls -laG'
-export CLICOLOR=1
-export LSCOLORS=ExGxxxxxcxbxxxxxxxExEc
+
+#SET PROMP STYLE
+#PROMPT='%F{green}%n%f@%F{green}%m%f:%F{yellow}%1d%f$ '
+PROMPT='%F{green}%n%f@%F{green}%m%f:%F{yellow}%1d%f$(gitBranchWatch)'
+
+# SET DIR COLOUR
+# export LSCOLORS=ExGxxxxxcxbxxxxxxxExEc
+export LSCOLORS=ExFxBxDxCxegedabagacad
+export LS_COLORS="$(vivid generate molokai)"
 
 #RM
 export rmm() { rm -rf $1 }
@@ -37,10 +44,6 @@ gitBranchWatch() {
 watch() {
     nodemon --exec $1 $2
 }
-
-#SET TERM STYLE
-#PROMPT='%F{green}%n%f@%F{green}%m%f:%F{yellow}%1d%f$ '
-PROMPT='%F{green}%n%f@%F{green}%m%f:%F{yellow}%1d%f$(gitBranchWatch)'
 
 #SET PYTHON
 alias python='python2'
