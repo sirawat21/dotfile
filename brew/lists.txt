@@ -7,12 +7,7 @@ tmux
 tree
 pstree
 nmap
-python
-python2
-vim
+python3
 node
-nano
-php
 ccat
 vivid
-coreutils

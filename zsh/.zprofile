@@ -1,9 +1,12 @@
-#################### PATH ####################
+##################### PATH ######################
 # HOME BREW
 HOME_BREW=/opt/homebrew/bin
 # GLOBAL PATH
 export PATH=$PATH:$HOME_BREW
-#################### ALIAS ####################
+##################### PROMPT ####################
+# Eg: username@hostname:workingDir$ <shell>
+PROMPT='%n@%m:%1d$ '
+##################### ALIAS #####################
 # Git
 alias git="$HOME_BREW/git"
 # Python3

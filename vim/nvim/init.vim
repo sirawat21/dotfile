@@ -1,4 +1,7 @@
 " NEO-VIM CONFIGURATION
+" --- Located: ~/.config/nvim/init.vim"
+" --- Ref: https://github.com/junegunn/vim-plug
+" --- Command: PlugInstall
 " ===================== [ VIMPLUG PACKAGE LISTS] =========================="
 call plug#begin()
 Plug 'scrooloose/nerdtree'

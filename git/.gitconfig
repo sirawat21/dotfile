@@ -1,0 +1,5 @@
+[user]
+    email = sirawat21@gmail.com
+    user = sirawat21
+[alias]
+    logg = log --all --decorate --oneline --graph

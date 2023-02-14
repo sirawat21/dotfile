@@ -1,4 +1,7 @@
 " --- [ VIM PLUG ] ---
+" --- Located: /.config/nvim/init.vim"
+" --- Ref: https://github.com/junegunn/vim-plug
+" --- Command: PlugInstall
 call plug#begin()
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
