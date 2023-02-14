@@ -1,7 +1,7 @@
 ##################### VARIABLE ##################
 # ls colour
-# export LSCOLORS=ExFxCxDxBxegedabagacad
-export LSCOLORS="$(vivid generate molokai)"
+export LS_COLORS="$(vivid generate molokai)"
+export LSCOLORS=ExFxCxDxBxegedabagacad
 # grep colour
 export GREP_OPTIONS='--color=always'
 export GREP_COLOR='1;31;1'
