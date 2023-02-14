@@ -1,9 +1,9 @@
 ##################### VARIABLE ##################
 # ls colour
-export LSCOLORS=ExFxCxDxBxegedabagacad
+# export LSCOLORS=ExFxCxDxBxegedabagacad
 # grep colour
-export GREP_OPTIONS='--color=always'
-export GREP_COLOR='1;31;1'
+# export GREP_OPTIONS='--color=always'
+# export GREP_COLOR='1;31;1'
 ##################### PATH ######################
 # HOME BREW
 HOME_BREW=/opt/homebrew/bin
@@ -11,7 +11,7 @@ HOME_BREW=/opt/homebrew/bin
 export PATH=$PATH:$HOME_BREW
 ##################### PROMPT ####################
 # Eg: username@hostname:workingDir$ <shell>
-PROMPT='%n@%m:%1d$ '
+# PROMPT='%n@%m:%1d$ '
 ##################### ALIAS #####################
 # Zsh
 alias zsh="$HOME_BREW/zsh"

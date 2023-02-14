@@ -16,3 +16,4 @@ sudo scutil --set HostName <HOSTNAME>
 - [Vimplug] (https://github.com/junegunn/vim-plug)
 - [OhMyZsh] (https://github.com/ohmyzsh/ohmyzsh/)
 - [OhMyZsh - Theme] (https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
+- [Powerlevel10k - Theme] (https://github.com/romkatv/powerlevel10k)
