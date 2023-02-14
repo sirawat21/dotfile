@@ -1,5 +1,6 @@
 zsh
 zplug
+coreutils
 iterm2
 lolcat
 wget

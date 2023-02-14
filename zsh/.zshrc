@@ -2,6 +2,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME=""
 ZSH_THEME="powerlevel10k/powerlevel10k"
+plugins=()
 source $ZSH/oh-my-zsh.sh
 ##################### ZPLUG ###############
 # CALLING
@@ -14,19 +15,21 @@ zplug "tysonwolker/iterm-tab-colors", as:plugin, defer:2
 zplug "zdharma/fast-syntax-highlighting", as:plugin, defer:2
 zplug "zsh-users/zsh-autosuggestions", as:plugin, defer:2
 zplug "jimeh/zsh-peco-history", as:plugin, defer:2
-# zplug "desyncr/auto-ls", as:plugin, defer:2
+zplug "zpm-zsh/ls"
 # Therefore, when it returns false, run zplug install
 if ! zplug check; then
     zplug install
 fi
 # LOAD
 zplug load
+##################### COREUTILS #############
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 ##################### POWERLEVEL10k #########
 # THEME
 # POWERLEVEL9K_COLOR_SCHEME=''
 # ELEMENT
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user host dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user host dir)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs time)
 # SEGMENT LEFT
 POWERLEVEL9K_USER_BACKGROUND='203'
 POWERLEVEL9K_USER_FOREGROUND='015'
