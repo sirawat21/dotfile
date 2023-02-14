@@ -23,8 +23,8 @@ alias pip="$HOME_BREW/pip3"
 # Neo Vim
 alias vim="$HOME_BREW/nvim"
 # Command ls
-# alias ls='ls -G'
-# alias la='ls -aG'
-# alias ll='ls -lG'
-# alias lla='ls -laG'
-# alias lal='ls -laG'
+alias ls='ls -G'
+alias la='ls -aG'
+alias ll='ls -lG'
+alias lla='ls -laG'
+alias lal='ls -laG'
