@@ -7,6 +7,8 @@ export PATH=$PATH:$HOME_BREW
 # Eg: username@hostname:workingDir$ <shell>
 PROMPT='%n@%m:%1d$ '
 ##################### ALIAS #####################
+# Zsh
+alias zsh="$HOME_BREW/zsh"
 # Git
 alias git="$HOME_BREW/git"
 # Python3
@@ -20,3 +22,6 @@ alias la='ls -aG'
 alias ll='ls -lG'
 alias lla='ls -laG'
 alias lal='ls -laG'
+##################### LSCOLORS ##################
+# export LSCOLORS=GxFxCxDxBxegedabagaced 
+export LS_COLORS="$(vivid generate molokai)"
