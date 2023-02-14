@@ -17,3 +17,4 @@ sudo scutil --set HostName <HOSTNAME>
 - [OhMyZsh - Theme] (https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
 - [Zplug] (https://github.com/zplug/zplug)
 - [Powerlevel10k - Theme] (https://github.com/romkatv/powerlevel10k)
+- [Powerlevel10k - Styling] (https://github.com/Powerlevel9k/powerlevel9k/wiki/Stylizing-Your-Prompt)
