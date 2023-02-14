@@ -11,4 +11,3 @@ nmap
 python3
 node
 ccat
-vivid
