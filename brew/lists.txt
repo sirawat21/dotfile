@@ -1,9 +1,10 @@
+zsh
+zplug
 iterm2
 lolcat
 wget
 pv
 htop
-zsh
 tmux
 tree
 pstree
