@@ -1,3 +1,10 @@
+##################### VARIABLE ##################
+# ls colour
+# export LSCOLORS=ExFxCxDxBxegedabagacad
+export LSCOLORS="$(vivid generate molokai)"
+# grep colour
+export GREP_OPTIONS='--color=always'
+export GREP_COLOR='1;31;1'
 ##################### PATH ######################
 # HOME BREW
 HOME_BREW=/opt/homebrew/bin
@@ -22,6 +29,3 @@ alias la='ls -aG'
 alias ll='ls -lG'
 alias lla='ls -laG'
 alias lal='ls -laG'
-##################### LSCOLORS ##################
-# export LSCOLORS=GxFxCxDxBxegedabagaced 
-export LS_COLORS="$(vivid generate molokai)"
