@@ -1,6 +1,6 @@
 ##################### VARIABLE ##################
 # ls colour
-LSCOLORS=ExFxBxDxBxegedabagacad
+LSCOLORS=ExFxBxDxCxegedabagacad
 # grep colour
 # export GREP_OPTIONS='--color=always'
 # export GREP_COLOR='1;31;1'

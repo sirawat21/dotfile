@@ -9,10 +9,12 @@ export ZPLUG_HOME=~/.zplug
 source $ZPLUG_HOME/init.zsh
 # PLUGIN
 # zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-# zplug "mafredri/zsh-async", from:github
+zplug "tysonwolker/iterm-tab-colors"
+zplug "desyncr/auto-ls"
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 zplug "zdharma/fast-syntax-highlighting", as:plugin, defer:2
 zplug "zsh-users/zsh-autosuggestions", as:plugin, defer:2
+zplug "jimeh/zsh-peco-history"
 # Therefore, when it returns false, run zplug install
 if ! zplug check; then
     zplug install
