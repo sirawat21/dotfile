@@ -1,3 +1,5 @@
+##################### COREUTILS #############
+# export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 ################### OHMYZSH ###############
 export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME=""
@@ -6,6 +8,7 @@ plugins=()
 source $ZSH/oh-my-zsh.sh
 ##################### ZPLUG ###############
 # CALLING
+# Plugin Source: /opt/homebrew/Cellar/zplug/*/repos
 export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
 # PLUGIN
@@ -15,15 +18,12 @@ zplug "tysonwolker/iterm-tab-colors", as:plugin, defer:2
 zplug "zdharma/fast-syntax-highlighting", as:plugin, defer:2
 zplug "zsh-users/zsh-autosuggestions", as:plugin, defer:2
 zplug "jimeh/zsh-peco-history", as:plugin, defer:2
-zplug "zpm-zsh/ls"
 # Therefore, when it returns false, run zplug install
 if ! zplug check; then
     zplug install
 fi
 # LOAD
 zplug load
-##################### COREUTILS #############
-export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 ##################### POWERLEVEL10k #########
 # THEME
 # POWERLEVEL9K_COLOR_SCHEME=''
