@@ -18,3 +18,4 @@ sudo scutil --set HostName <HOSTNAME>
 - [Zplug] (https://github.com/zplug/zplug)
 - [Powerlevel10k - Theme] (https://github.com/romkatv/powerlevel10k)
 - [Powerlevel10k - Styling] (https://github.com/Powerlevel9k/powerlevel9k/wiki/Stylizing-Your-Prompt)
+- [Warp Terminal Custom Theme] (https://docs.warp.dev/appearance/custom-themes)
