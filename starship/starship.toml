@@ -1,48 +1,47 @@
 format = """
-$username\
-$hostname\
-$directory\
-$git_branch\
-$git_state\
-$git_status\
-$git_metrics\
-$fill\
-$nodejs\
-$cmd_duration $jobs $time\
+[┌](bold back)$fill\
 $line_break\
-$character"""
+[│](bold back)$directory\
+$git_branch$git_status\
+git_state\
+$line_break\
+[└─](bold back) $username[@](bold gray)$hostname\
+[ ]()$nodejs\
+[─](bold back)$character """
+
+[username]
+show_always = true
+disabled = false
+format = "[$user](bold black)"
+
+[hostname]
+trim_at = "."
+ssh_only = false
+format = "[$hostname](bold red)"
 
 [nodejs]
+symbol = "NODEJS:"
 format = "[$symbol($version )]($style)"
 
 [fill]
-symbol = " "
+symbol = "─"
+style = "bold back"
 
 [directory]
-style = "blue"
+style = "bold black"
 read_only = "*"
 truncation_length = 4
 truncate_to_repo = false
 
 [character]
-success_symbol = "[❯](purple)"
-error_symbol = "[❯](red)"
-vicmd_symbol = "[❮](green)"
+success_symbol = "[❯](bold black)"
+error_symbol = "[❯](bold red)"
+vicmd_symbol = "[❮](bold green)"
 
 [git_branch]
-symbol = "⚡️"
-format = "[$symbol($branch)]($style) "
-style = "bright-black"
-
-[jobs]
 symbol = ""
-style = "bold red"
-number_threshold = 1
-format = "[$symbol]($style)"
-
-[git_status]
-format = '([\[$all_status$ahead_behind\]]($style) )'
-style = "cyan"
+format = "[$symbol($branch)]($style) "
+style = "red bold"
 
 [git_state]
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
@@ -50,10 +49,6 @@ style = "bright-black"
 
 [git_metrics]
 disabled = false
-
-[cmd_duration]
-format = "[$duration]($style)"
-style = "yellow"
 
 [time]
 disabled = false
