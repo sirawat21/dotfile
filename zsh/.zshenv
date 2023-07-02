@@ -1,0 +1,13 @@
+###### [1]ENVIRONMENT ######
+
+# ZSH SHELL CONFIG
+ZDOTDIR=$HOME/.zsh
+
+# HOME BREW
+HOMEBREW=/opt/homebrew/bin
+
+# NODE VERSION MANAGEMENT NVM
+export NVM_DIR="$HOME/.nvm"
+
+# GLOBAL PATH
+export PATH=$PATH:$HOMEBREW

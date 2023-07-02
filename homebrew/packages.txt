@@ -1,0 +1,7 @@
+zsh
+git
+wget
+tree
+pstree
+pv
+python3
