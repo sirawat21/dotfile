@@ -1,4 +1,0 @@
-host <DOMAIN>
-    identityfile <PATH> 
-host <IP>
-    identityfile <PATH>

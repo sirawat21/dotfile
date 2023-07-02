@@ -1,21 +1,19 @@
-# Dotfile
-Managing the configuration and setup the environment.
-## Manual Configuration
+# Dotfiles
+---
+## Usage
+### Install
 ```
-# HUSH LOGIN
-touch $HOME/.hushlogin
-# HOST NAME
+/bin/zsh ./setup.zsh
+```
+### Uninstall
+```
+/bin/zsh ./prune.zsh
+```
+## Required manual config fils
+- .gitconfig
+- .ssh/config
+
+## Set Hostname
+```
 sudo scutil --set HostName <HOSTNAME>
 ```
-## Dependencies
-- [Homebrew] (https://docs.brew.sh/Installation)
-- [Tmux] (https://github.com/tmux/tmux)
-- [Vim] (https://www.vim.org/download.php)
-- [Neo Vim] (https://neovim.io/)
-- [Vimplug] (https://github.com/junegunn/vim-plug)
-- [OhMyZsh] (https://github.com/ohmyzsh/ohmyzsh/)
-- [OhMyZsh - Theme] (https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
-- [Zplug] (https://github.com/zplug/zplug)
-- [Powerlevel10k - Theme] (https://github.com/romkatv/powerlevel10k)
-- [Powerlevel10k - Styling] (https://github.com/Powerlevel9k/powerlevel9k/wiki/Stylizing-Your-Prompt)
-- [Warp Terminal Custom Theme] (https://docs.warp.dev/appearance/custom-themes)
