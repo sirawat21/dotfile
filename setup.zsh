@@ -47,6 +47,11 @@ fi
 
 # BREW INSTALL OTHER PACKAGES
 if command -v brew &> /dev/null; then
+    # BREW INSTALL ALACRITTY TERMINAL
+    echo "🔵 INSTALL ALACRITTY TERMINAL \n"
+    cp -R $DOTFILE_DIR/alacritty/ $HOME/.config/alacritty/
+    brew install --cask alacritty
+
     # BREW INSTALL TMUX
     echo "🔵 INSTALL TMUX \n"
     brew install tmux
