@@ -26,6 +26,10 @@ rm -rf $HOME/.npm
 echo "🔴 REMOVE GIT CONFIG \n"
 rm -f $HOME/.gitconfig
 
+# REMOVE ALACRITTY
+echo "🔴 REMOVE ALACRITTY \n"
+rm -rf $HOME/.config/alacritty/
+
 # REMOVE SSH CONFIG
 echo "🔴 REMOVE TEMPLATE SSH CONFIG \n"
 rm -rf $HOME/.ssh/
