@@ -9,7 +9,7 @@ $nodejs\
 $cmd_duration $jobs\
 $line_break\
 $username\
-[@](bold #3D3D3D)\
+[@](bold #CDCDCD)\
 $hostname\
 $character\
 """
@@ -17,35 +17,36 @@ $character\
 [username]
 show_always = true
 disabled = false
-format = "[$user](bold purple)"
+format = "[$user](bold #34495E)"
 
 [hostname]
 trim_at = "."
 ssh_only = false
-format = "[$hostname ](bold red)"
+format = "[$hostname ](bold #34495E)"
 
 [nodejs]
-symbol= "NODE.JS:"
-format = "[$symbol ($version)](bold green)"
+symbol= "[NODE.JS:](#52BE80)"
+format = "[$symbol([$version](#73C6B6))](bold)"
 
 [character]
-success_symbol = "[❯](purple)"
-error_symbol = "[❯](red)"
-vicmd_symbol = "[❮](green)"
+success_symbol = "[❯](#138D75)"
+error_symbol = "[❯](#E74C3C)"
+vicmd_symbol = "[❮](#17202A)"
 
 [fill]
 symbol = " "
 
 [directory]
-style = "bold blue"
+style = "bold #5D6D7E"
 read_only = "🔒"
 truncation_length = 4
 truncate_to_repo = false
 
 [git_branch]
-symbol = "⚡️"
-format = '[$symbol$branch(:$remote_branch)]($style) '
-style = "bold red"
+symbol = "[*](bold red)"
+style = "#D35400"
+format = '[$symbol$branch(:$remote_branch)]($style)'
+
 
 [git_commit]
 commit_hash_length = 7
