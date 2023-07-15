@@ -43,7 +43,7 @@ truncation_length = 4
 truncate_to_repo = false
 
 [git_branch]
-symbol = "[*](bold red)"
+symbol = "[∙](red)"
 style = "#D35400"
 format = '[$symbol$branch(:$remote_branch)]($style)'
 
@@ -62,8 +62,8 @@ behind = "⇣${count}"
 modified = "[+${count}](bold green)"
 untracked = "[+${count}](bold green)"
 staged = "+${count}"
+format = '([\[📝$modified | 🤷$untracked\]]($style))'
 style = 'bold black'
-format = '([\[$modified | $untracked\]]($style) )'
 disabled = false
 
 
@@ -76,7 +76,7 @@ disabled = false
 format = '([+$added]($added_style) )([-$deleted]($deleted_style) )'
 
 [jobs]
-symbol = ""
+symbol = "⏱️"
 style = "bold red"
 number_threshold = 1
 format = "[$symbol]($style)"
