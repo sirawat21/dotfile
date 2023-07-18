@@ -44,11 +44,6 @@ if command -v brew &>/dev/null; then
         nvm install node --lts
     fi
 
-    # BREW INSTALL RVM
-    echo "🔵 INSTALL RVM \n"
-    brew install rbenv ruby-buildfd
-    git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-
 fi
 
 # BREW INSTALL OTHER PACKAGES
@@ -106,6 +101,15 @@ if [[ "$INPUT" == "Y" || "$INPUT" == "y" ]]; then
 else
     echo "SKIPED INSTALLATION \n"
 fi
+
+# BREW INSTALL OTHER PACKAGES
+if command -v brew &>/dev/null; then
+    # BREW INSTALL RVM
+    echo "🔵 INSTALL RVM \n"
+    brew install rbenv ruby-buildfd
+    git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+fi
+rbenv install -l
 
 # CREATE ZSH SHELL ENV
 echo "🔵 SET ZSH ENV \n"
