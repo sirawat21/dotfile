@@ -29,8 +29,8 @@ if command -v brew &>/dev/null; then
     done <$DOTFILE_DIR/homebrew/packages.txt
 fi
 
-# BREW INSTALL NVM
 if command -v brew &>/dev/null; then
+    # BREW INSTALL NVM
     echo "🔵 INSTALL NVM \n"
     brew cleanup nvm
     mkdir $HOME/.nvm
@@ -43,6 +43,12 @@ if command -v brew &>/dev/null; then
         echo "🔵 NVM INSTALL NODE LTS \n"
         nvm install node --lts
     fi
+
+    # BREW INSTALL RVM
+    echo "🔵 INSTALL RVM \n"
+    brew install rbenv ruby-buildfd
+    git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+
 fi
 
 # BREW INSTALL OTHER PACKAGES
@@ -59,7 +65,7 @@ if command -v brew &>/dev/null; then
         echo "SKIPED ALACRITTY INSTALLATION \n"
     fi
 
-   # BREW INSTALL WARP TERMINAL
+    # BREW INSTALL WARP TERMINAL
     echo "🔵 INSTALL WARP TERMINAL \n"
     read INPUT
     if [[ "$INPUT" == "Y" || "$INPUT" == "y" ]]; then

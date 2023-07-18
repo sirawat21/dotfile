@@ -47,3 +47,6 @@ echo "🔴 REMOVE ZSH SHELL ENV \n"
 rm -f $HOME/.zshenv 
 rm -f $HOME/.zsh_history
 rm -rf $HOME/.zsh/
+
+# REMOVE RBENV CONFIG
+rm -rf $HOME/.rbenv
