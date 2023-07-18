@@ -25,3 +25,12 @@ fi
 
 # CALL RUBY ENV MANAGER
 eval "$(rbenv init - zsh)"
+
+# COCOPAD CONFIG
+export GEM_HOME=$HOME/.gem
+export PATH=$GEM_HOME/bin:$PATH
+
+# CONFIG ANDROID ENV
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools

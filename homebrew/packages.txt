@@ -5,3 +5,5 @@ tree
 pstree
 pv
 python3
+watchman
+nodemon

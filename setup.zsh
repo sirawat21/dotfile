@@ -111,6 +111,19 @@ if command -v brew &>/dev/null; then
 fi
 rbenv install -l
 
+if command -v gem &>/dev/null; then
+    # GEM INSTALL COCOPAD
+    export GEM_HOME=$HOME/.gem
+    export PATH=$GEM_HOME/bin:$PATH
+    gem install cocoapods --user-install
+    gem which cocoapods
+fi
+
+# BREW INSTALL JDK DISTRO Azul Zulu
+if command -v brew &>/dev/null; then
+    brew install --cask zulu
+fi
+
 # CREATE ZSH SHELL ENV
 echo "🔵 SET ZSH ENV \n"
 cp -R $DOTFILE_DIR/zsh/ $HOME/
