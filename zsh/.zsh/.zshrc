@@ -22,3 +22,6 @@ fi
 
 #COREUTILS
 # export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+
+# CALL RUBY ENV MANAGER
+eval "$(rbenv init - zsh)"
