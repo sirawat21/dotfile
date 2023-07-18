@@ -121,6 +121,7 @@ fi
 
 # BREW INSTALL JDK DISTRO Azul Zulu
 if command -v brew &>/dev/null; then
+    brew tap homebrew/cask-versions
     brew install --cask zulu
 fi
 
