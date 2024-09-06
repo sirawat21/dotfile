@@ -34,4 +34,6 @@ export PATH=$GEM_HOME/bin:$PATH
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# JAVA HOME
 export JAVA_HOME=$(ls -1d /opt/homebrew/opt/openjdk*/libexec/openjdk.jdk/Contents/Home | tail -n 1)
