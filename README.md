@@ -1,6 +1,5 @@
 # Dotfiles
 ---
-## Usage
 ### Install
 ```
 /bin/zsh ./setup.zsh
