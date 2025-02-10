@@ -26,28 +26,25 @@ rm -rf $HOME/.npm
 echo "🔴 REMOVE GIT CONFIG \n"
 rm -f $HOME/.gitconfig
 
-# REMOVE ALACRITTY
-echo "🔴 REMOVE ALACRITTY \n"
-rm -rf $HOME/.config/alacritty/
 
-# REMOVE SSH CONFIG
-echo "🔴 REMOVE TEMPLATE SSH CONFIG \n"
-rm -rf $HOME/.ssh/
+# # REMOVE SSH CONFIG
+# echo "🔴 REMOVE TEMPLATE SSH CONFIG \n"
+# rm -rf $HOME/.ssh/
 
 # REMOVE TMUX CONFIG
 rm -f $HOME/.tmux.conf
 
-# REMOVE STARSHIP
-echo "🔴 REMOVE STARSHIP CONFIG \n"
-sudo rm -f /usr/local/bin/starship
-rm -rf $HOME/.config/starship/
+# # REMOVE STARSHIP
+# echo "🔴 REMOVE STARSHIP CONFIG \n"
+# sudo rm -f /usr/local/bin/starship
+# rm -rf $HOME/.config/starship/
 
-# REMOVE ZSHRC
-echo "🔴 REMOVE ZSH SHELL ENV \n"
-rm -f $HOME/.zshenv 
-rm -f $HOME/.zsh_history
-rm -rf $HOME/.zsh/
+# # REMOVE ZSHRC
+# echo "🔴 REMOVE ZSH SHELL ENV \n"
+# rm -f $HOME/.zshenv 
+# rm -f $HOME/.zsh_history
+# rm -rf $HOME/.zsh/
 
-# REMOVE RUBY CONFIG
-rm -rf $HOME/.rbenv
-rm -rf $HOME/.ruby-version
+# # REMOVE RUBY CONFIG
+# rm -rf $HOME/.rbenv
+# rm -rf $HOME/.ruby-version

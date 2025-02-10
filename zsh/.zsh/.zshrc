@@ -1,39 +1,47 @@
 ###### [3] USER INTERACTIVE SHELL ######
 
-# CALL NVM
+# NVM
 source $(brew --prefix nvm)/nvm.sh
 
-# APPLY PROMPT
-if ! command -v starship &> /dev/null; then
-    ## DEFAULT
-    # COLOURING ls
-    LSCOLORS=ExFxBxDxCxegedabagacad
-    # COLOURING grep
-    export GREP_OPTIONS='--color=always'
-    export GREP_COLOR='1;31;1'
-    # PROMPT FORMAT Eg: username@hostname:workingDir$ <shell>
-    PROMPT="%n@%m:$ "
-else
-    ## STARSHIP
-    export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
-    export STARSHIP_CACHE=$HOME/.config/starship/cache
-    eval "$(starship init zsh)"
-fi
+# Set up LS_COLORS (like Ubuntu default)
+LSCOLORS=ExFxBxDxCxegedabagacad
+export LSCOLORS
 
-#COREUTILS
-# export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+# Color for grep output (like Ubuntu default)
+export GREP_OPTIONS='--color=always'
+export GREP_COLOR='1;31;1'
 
-# CALL RUBY ENV MANAGER
-eval "$(rbenv init - zsh)"
+# Configure zsh prompt
+autoload -Uz colors && colors
+PROMPT='%F{cyan}%n@%m%f:%F{green}%~%f$ '
 
-# COCOPAD CONFIG
-export GEM_HOME=$HOME/.gem
-export PATH=$GEM_HOME/bin:$PATH
+# Configure Git branch
+# Function to get the current Git branch and color it based on branch name
+git_branch_info() {
+  branch=$(git symbolic-ref HEAD 2>/dev/null | sed "s|refs/heads/||")
+  if [ -n "$branch" ]; then
+    echo " %F{red}$branch%f "
+  fi
+}
 
-# CONFIG ANDROID ENV
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+# Function to show the number of changes in the Git repo
+git_status_changes() {
+  git rev-parse --is-inside-work-tree &>/dev/null || return
 
-# JAVA HOME
-export JAVA_HOME=$(ls -1d /opt/homebrew/opt/openjdk*/libexec/openjdk.jdk/Contents/Home | tail -n 1)
+  # Get the count of modified, deleted, and untracked files
+  modified_count=$(git status --porcelain | grep -E "^[\ M]" | wc -l)
+  deleted_count=$(git status --porcelain | grep -E "^D" | wc -l)
+  untracked_count=$(git status --porcelain | grep -E "^\?\?" | wc -l)
+  total_changes=$((modified_count + deleted_count + untracked_count))
+
+  # Return the number of changes if there are any
+  if [ "$total_changes" -gt 0 ]; then
+    echo "%F{yellow}[+$total_changes]%f "
+  fi
+}
+
+# Enable prompt substitution to evaluate the function call
+setopt prompt_subst
+
+# Configure the prompt to include the Git branch with appropriate colors
+PROMPT='%F{cyan}%n@%m%f:%F{green}%~%f$(git_branch_info)$(git_status_changes)$ '

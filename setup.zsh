@@ -1,5 +1,7 @@
 #!/bin/zsh
 DOTFILE_DIR=$(pwd)
+# SET HOST NAME
+sudo scutil --set HostName localhost
 
 # SET HOUSH LOGIN
 echo "🔵 SET HOUSH LOGIN"
@@ -49,83 +51,83 @@ fi
 # BREW INSTALL OTHER PACKAGES
 if command -v brew &>/dev/null; then
 
-    # BREW INSTALL ALACRITTY TERMINAL
-    echo "🔵 INSTALL ALACRITTY TERMINAL \n"
-    read INPUT
-    if [[ "$INPUT" == "Y" || "$INPUT" == "y" ]]; then
-        echo "PROCEEDING INSTALLATION \n"
-        cp -R $DOTFILE_DIR/alacritty/ $HOME/.config/alacritty/
-        brew install --cask alacritty
-    else
-        echo "SKIPED ALACRITTY INSTALLATION \n"
-    fi
+    # # BREW INSTALL ALACRITTY TERMINAL
+    # echo "🔵 INSTALL ALACRITTY TERMINAL \n"
+    # read INPUT
+    # if [[ "$INPUT" == "Y" || "$INPUT" == "y" ]]; then
+    #     echo "PROCEEDING INSTALLATION \n"
+    #     cp -R $DOTFILE_DIR/alacritty/ $HOME/.config/alacritty/
+    #     brew install --cask alacritty
+    # else
+    #     echo "SKIPED ALACRITTY INSTALLATION \n"
+    # fi
 
-    # BREW INSTALL WARP TERMINAL
-    echo "🔵 INSTALL WARP TERMINAL \n"
-    read INPUT
-    if [[ "$INPUT" == "Y" || "$INPUT" == "y" ]]; then
-        echo "PROCEEDING INSTALLATION \n"
-        # cp -R $DOTFILE_DIR/warp/ $HOME/.config/warp/
-        brew install --cask warp
-    else
-        echo "SKIPED WARP INSTALLATION \n"
-    fi
+    # # BREW INSTALL WARP TERMINAL
+    # echo "🔵 INSTALL WARP TERMINAL \n"
+    # read INPUT
+    # if [[ "$INPUT" == "Y" || "$INPUT" == "y" ]]; then
+    #     echo "PROCEEDING INSTALLATION \n"
+    #     # cp -R $DOTFILE_DIR/warp/ $HOME/.config/warp/
+    #     brew install --cask warp
+    # else
+    #     echo "SKIPED WARP INSTALLATION \n"
+    # fi
 
     # BREW INSTALL TMUX
     echo "🔵 INSTALL TMUX \n"
     brew install tmux
 
-    # BREW INSTALL NEO-VIM
-    echo "🔵 INSTALL NEO VIM \n"
-    brew install neovim
+    # # BREW INSTALL NEO-VIM
+    # echo "🔵 INSTALL NEO VIM \n"
+    # brew install neovim
 fi
 
-# SET CONFIG TO GIT
+SET CONFIG TO GIT
 echo "🔵 SET GIT CONFIG \n"
 cat $DOTFILE_DIR/git/.gitconfig >$HOME/.gitconfig
 
 # CREATE TEMPLATE SSH CONFIG
-echo "🔵 CREATE TEMPLATE SSH CONFIG \n"
-cp -R $DOTFILE_DIR/ssh/.ssh $HOME
+# echo "🔵 CREATE TEMPLATE SSH CONFIG \n"
+# cp -R $DOTFILE_DIR/ssh/.ssh $HOME
 
 # CREATE TMUX CONFIG
 cp -R $DOTFILE_DIR/tmux/.tmux.conf $HOME/.tmux.conf
 
 # INSTALL STARSHIP PROMPT
-echo -n "🔵 INSTALL STARSHIP PROMPT [Y/y]: "
-read INPUT
-if [[ "$INPUT" == "Y" || "$INPUT" == "y" ]]; then
-    echo "PROCEEDING INSTALLATION \n"
-    cp -R $DOTFILE_DIR/starship/ $HOME/.config/starship/
-    curl -sS https://starship.rs/install.sh | sh
-else
-    echo "SKIPED INSTALLATION \n"
-fi
+# echo -n "🔵 INSTALL STARSHIP PROMPT [Y/y]: "
+# read INPUT
+# if [[ "$INPUT" == "Y" || "$INPUT" == "y" ]]; then
+#     echo "PROCEEDING INSTALLATION \n"
+#     cp -R $DOTFILE_DIR/starship/ $HOME/.config/starship/
+#     curl -sS https://starship.rs/install.sh | sh
+# else
+#     echo "SKIPED INSTALLATION \n"
+# fi
 
-# BREW INSTALL OTHER PACKAGES
-if command -v brew &>/dev/null; then
-    # BREW INSTALL RVM
-    echo "🔵 INSTALL RVM \n"
-    brew install rbenv ruby-buildfd
-    git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-fi
-rbenv install -l
+# # BREW INSTALL OTHER PACKAGES
+# if command -v brew &>/dev/null; then
+#     # BREW INSTALL RVM
+#     echo "🔵 INSTALL RVM \n"
+#     brew install rbenv ruby-buildfd
+#     git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+# fi
+# rbenv install -l
 
-if command -v gem &>/dev/null; then
-    # GEM INSTALL COCOPAD
-    export GEM_HOME=$HOME/.gem
-    export PATH=$GEM_HOME/bin:$PATH
-    gem install cocoapods --user-install
-    gem which cocoapods
-fi
+# if command -v gem &>/dev/null; then
+#     # GEM INSTALL COCOPAD
+#     export GEM_HOME=$HOME/.gem
+#     export PATH=$GEM_HOME/bin:$PATH
+#     gem install cocoapods --user-install
+#     gem which cocoapods
+# fi
 
-# BREW INSTALL JDK DISTRO Azul Zulu
-if command -v brew &>/dev/null; then
-    brew tap homebrew/cask-versions
-    brew install --cask zulu
-fi
+# # BREW INSTALL JDK DISTRO Azul Zulu
+# if command -v brew &>/dev/null; then
+#     brew tap homebrew/cask-versions
+#     brew install --cask zulu
+# fi
 
-# CREATE ZSH SHELL ENV
-echo "🔵 SET ZSH ENV \n"
-cp -R $DOTFILE_DIR/zsh/ $HOME/
-source $HOME/.zshenv
+# # CREATE ZSH SHELL ENV
+# echo "🔵 SET ZSH ENV \n"
+# cp -R $DOTFILE_DIR/zsh/ $HOME/
+# source $HOME/.zshenv
