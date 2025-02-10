@@ -51,28 +51,6 @@ fi
 # BREW INSTALL OTHER PACKAGES
 if command -v brew &>/dev/null; then
 
-    # # BREW INSTALL ALACRITTY TERMINAL
-    # echo "🔵 INSTALL ALACRITTY TERMINAL \n"
-    # read INPUT
-    # if [[ "$INPUT" == "Y" || "$INPUT" == "y" ]]; then
-    #     echo "PROCEEDING INSTALLATION \n"
-    #     cp -R $DOTFILE_DIR/alacritty/ $HOME/.config/alacritty/
-    #     brew install --cask alacritty
-    # else
-    #     echo "SKIPED ALACRITTY INSTALLATION \n"
-    # fi
-
-    # # BREW INSTALL WARP TERMINAL
-    # echo "🔵 INSTALL WARP TERMINAL \n"
-    # read INPUT
-    # if [[ "$INPUT" == "Y" || "$INPUT" == "y" ]]; then
-    #     echo "PROCEEDING INSTALLATION \n"
-    #     # cp -R $DOTFILE_DIR/warp/ $HOME/.config/warp/
-    #     brew install --cask warp
-    # else
-    #     echo "SKIPED WARP INSTALLATION \n"
-    # fi
-
     # BREW INSTALL TMUX
     echo "🔵 INSTALL TMUX \n"
     brew install tmux
@@ -92,17 +70,6 @@ cat $DOTFILE_DIR/git/.gitconfig >$HOME/.gitconfig
 
 # CREATE TMUX CONFIG
 cp -R $DOTFILE_DIR/tmux/.tmux.conf $HOME/.tmux.conf
-
-# INSTALL STARSHIP PROMPT
-# echo -n "🔵 INSTALL STARSHIP PROMPT [Y/y]: "
-# read INPUT
-# if [[ "$INPUT" == "Y" || "$INPUT" == "y" ]]; then
-#     echo "PROCEEDING INSTALLATION \n"
-#     cp -R $DOTFILE_DIR/starship/ $HOME/.config/starship/
-#     curl -sS https://starship.rs/install.sh | sh
-# else
-#     echo "SKIPED INSTALLATION \n"
-# fi
 
 # # BREW INSTALL OTHER PACKAGES
 # if command -v brew &>/dev/null; then

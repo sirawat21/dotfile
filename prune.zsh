@@ -34,11 +34,6 @@ rm -f $HOME/.gitconfig
 # REMOVE TMUX CONFIG
 rm -f $HOME/.tmux.conf
 
-# # REMOVE STARSHIP
-# echo "🔴 REMOVE STARSHIP CONFIG \n"
-# sudo rm -f /usr/local/bin/starship
-# rm -rf $HOME/.config/starship/
-
 # # REMOVE ZSHRC
 # echo "🔴 REMOVE ZSH SHELL ENV \n"
 # rm -f $HOME/.zshenv 
