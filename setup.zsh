@@ -65,8 +65,8 @@ echo "🔵 SET GIT CONFIG \n"
 cat $DOTFILE_DIR/git/.gitconfig >$HOME/.gitconfig
 
 # CREATE TEMPLATE SSH CONFIG
-# echo "🔵 CREATE TEMPLATE SSH CONFIG \n"
-# cp -R $DOTFILE_DIR/ssh/.ssh $HOME
+echo "🔵 CREATE TEMPLATE SSH CONFIG \n"
+cp -R $DOTFILE_DIR/ssh/.ssh $HOME
 
 # CREATE TMUX CONFIG
 cp -R $DOTFILE_DIR/tmux/.tmux.conf $HOME/.tmux.conf

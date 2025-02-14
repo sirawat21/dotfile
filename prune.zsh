@@ -28,8 +28,8 @@ rm -f $HOME/.gitconfig
 
 
 # # REMOVE SSH CONFIG
-# echo "🔴 REMOVE TEMPLATE SSH CONFIG \n"
-# rm -rf $HOME/.ssh/
+echo "🔴 REMOVE TEMPLATE SSH CONFIG \n"
+rm -rf $HOME/.ssh/
 
 # REMOVE TMUX CONFIG
 rm -f $HOME/.tmux.conf
