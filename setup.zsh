@@ -55,9 +55,9 @@ if command -v brew &>/dev/null; then
     echo "🔵 INSTALL TMUX \n"
     brew install tmux
 
-    # # BREW INSTALL NEO-VIM
-    # echo "🔵 INSTALL NEO VIM \n"
-    # brew install neovim
+    # BREW INSTALL NEO-VIM
+    echo "🔵 INSTALL NEO VIM \n"
+    brew install neovim
 fi
 
 SET CONFIG TO GIT
@@ -70,6 +70,10 @@ cp -R $DOTFILE_DIR/ssh/.ssh $HOME
 
 # CREATE TMUX CONFIG
 cp -R $DOTFILE_DIR/tmux/.tmux.conf $HOME/.tmux.conf
+
+# CONFIG ZSH
+sudo zsh -c 'echo $HOMEBREW/zsh >> /etc/shells'
+chsh -s $HOMEBREW/zsh
 
 # # BREW INSTALL OTHER PACKAGES
 # if command -v brew &>/dev/null; then

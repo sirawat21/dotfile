@@ -35,10 +35,10 @@ rm -rf $HOME/.ssh/
 rm -f $HOME/.tmux.conf
 
 # # REMOVE ZSHRC
-# echo "🔴 REMOVE ZSH SHELL ENV \n"
-# rm -f $HOME/.zshenv 
-# rm -f $HOME/.zsh_history
-# rm -rf $HOME/.zsh/
+echo "🔴 REMOVE ZSH SHELL ENV \n"
+rm -f $HOME/.zshenv 
+rm -f $HOME/.zsh_history
+rm -rf $HOME/.zsh/
 
 # # REMOVE RUBY CONFIG
 # rm -rf $HOME/.rbenv
