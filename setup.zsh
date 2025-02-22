@@ -75,30 +75,7 @@ cp -R $DOTFILE_DIR/tmux/.tmux.conf $HOME/.tmux.conf
 sudo zsh -c 'echo $HOMEBREW/zsh >> /etc/shells'
 chsh -s $HOMEBREW/zsh
 
-# # BREW INSTALL OTHER PACKAGES
-# if command -v brew &>/dev/null; then
-#     # BREW INSTALL RVM
-#     echo "🔵 INSTALL RVM \n"
-#     brew install rbenv ruby-buildfd
-#     git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-# fi
-# rbenv install -l
-
-# if command -v gem &>/dev/null; then
-#     # GEM INSTALL COCOPAD
-#     export GEM_HOME=$HOME/.gem
-#     export PATH=$GEM_HOME/bin:$PATH
-#     gem install cocoapods --user-install
-#     gem which cocoapods
-# fi
-
-# # BREW INSTALL JDK DISTRO Azul Zulu
-# if command -v brew &>/dev/null; then
-#     brew tap homebrew/cask-versions
-#     brew install --cask zulu
-# fi
-
 # # CREATE ZSH SHELL ENV
-# echo "🔵 SET ZSH ENV \n"
-# cp -R $DOTFILE_DIR/zsh/ $HOME/
-# source $HOME/.zshenv
+echo "🔵 SET ZSH ENV \n"
+cp -R $DOTFILE_DIR/zsh/ $HOME/
+source $HOME/.zshenv

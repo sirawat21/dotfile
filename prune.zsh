@@ -39,7 +39,3 @@ echo "🔴 REMOVE ZSH SHELL ENV \n"
 rm -f $HOME/.zshenv 
 rm -f $HOME/.zsh_history
 rm -rf $HOME/.zsh/
-
-# # REMOVE RUBY CONFIG
-# rm -rf $HOME/.rbenv
-# rm -rf $HOME/.ruby-version
