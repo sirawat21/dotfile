@@ -4,6 +4,7 @@ wget
 tree
 pstree
 pv
+pyenv
 python3
 node
 watchman
