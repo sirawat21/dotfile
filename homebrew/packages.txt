@@ -4,9 +4,10 @@ wget
 tree
 pstree
 pv
-pyenv
-python3
 node
 watchman
 nodemon
 openjdk@17
+pyenv
+pyenv-virtualenv
+python3

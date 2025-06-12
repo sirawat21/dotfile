@@ -13,5 +13,9 @@ export NVM_DIR="$HOME/.nvm"
 # JAVA HOME
 export JAVA_HOME=$(ls -d $HOMEBREW_PROGRAMS/openjdk@17/* | sort -V | tail -n 1)
 
+# PYENV
+export PYENV_HOME="$HOME/.pyenv"
+export PYENV_BIN="$PYENV_ROOT/bin"
+
 # GLOBAL PATH
-export PATH=$PATH:$HOMEBREW
+export PATH=$PATH:$HOMEBREW:$PYENV_BIN

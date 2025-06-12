@@ -75,7 +75,7 @@ cp -R $DOTFILE_DIR/tmux/.tmux.conf $HOME/.tmux.conf
 sudo zsh -c 'echo $HOMEBREW/zsh >> /etc/shells'
 chsh -s $HOMEBREW/zsh
 
-# # CREATE ZSH SHELL ENV
+# CREATE ZSH SHELL ENV
 echo "🔵 SET ZSH ENV \n"
 cp -R $DOTFILE_DIR/zsh/ $HOME/
 source $HOME/.zshenv
